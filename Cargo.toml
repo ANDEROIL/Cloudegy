@@ -1,0 +1,16 @@
+[package]
+name = "cloudegy"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+iced = { version = "0.13", features = ["tokio", "svg", "advanced"] }
+rodio = { version = "0.20", default-features = false, features = ["symphonia-all"] }
+lofty = "0.22"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
